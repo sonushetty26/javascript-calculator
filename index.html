@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CALC</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <section>
+        <div>
+            <h1>CALCULATOR-PROJECT</h1>
+            <input type="text" name="calc" id="calc" placeholder="RESULT">
+            <table>
+                <tr>
+                    <td><button type="button" onclick="getValueFromButton('7')">7</button></td>
+                    <td><button type="button" onclick="getValueFromButton('8')">8</button></td>
+                    <td><button type="button" onclick="getValueFromButton('9')">9</button></td>
+                    <td><button type="button" onclick="getValueFromButton('/')">/</button></td>
+                </tr>
+                <tr>
+                    <td><button type="button" onclick="getValueFromButton('4')">4</button></td>
+                    <td><button type="button" onclick="getValueFromButton('5')">5</button></td>
+                    <td><button type="button" onclick="getValueFromButton('6')">6</button></td>
+                    <td><button type="button" onclick="getValueFromButton('*')">*</button></td>
+                </tr>
+                <tr>
+                    <td><button type="button" onclick="getValueFromButton('1')">1</button></td>
+                    <td><button type="button" onclick="getValueFromButton('2')">2</button></td>
+                    <td><button type="button" onclick="getValueFromButton('3')">3</button></td>
+                    <td><button type="button" onclick="getValueFromButton('-')">-</button></td>
+                </tr>
+                <tr>
+                    <td><button type="button" onclick="getValueFromButton('.')">.</button></td>
+                    <td colspan="2"><button type="button" onclick="getValueFromButton('0')">0</button></td>
+                    <td><button type="button" onclick="getValueFromButton('+')">+</button></td>
+                </tr>
+                <tr>
+                    <td><button type="button" onclick="getValueFromButton('%')">%</button></td>
+                    <td colspan="2"><button type="button" onclick="clearTextBox()">Clear</button></td>
+                    <td><button type="button" onclick="calcResult()">=</button></td>
+                </tr>
+            </table>
+        </div>
+    </section>
+
+    <script>
+        function getValueFromButton(number){
+              document.getElementById("calc").value += number;
+        }
+
+        function clearTextBox(){
+            document.getElementById("calc").value="";
+        }
+
+        function calcResult(){
+            let result = eval(document.getElementById("calc").value);
+
+            document.getElementById("calc").value = result;
+        }
+    </script>
+</body>
+</html>
